@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-java-api
+spec:
+  selector:
+    matchLabels:
+      app: my-java-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-java-api
+    spec:
+      containers:
+        - name: my-java-api
+          image: registry.digitalocean.com/enigmacamp/simple-java:v1.0
+          envFrom:
+            - configMapRef:
+                name: java-config
+          resources:
+            limits:
+              memory: "100Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8181
+      imagePullSecrets:
+        - name: regcred
