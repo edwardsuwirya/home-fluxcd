@@ -6,3 +6,4 @@ resources:
   - ../../../modules/registry-secret.yaml
   - namespace.yaml
   - app
+  - ingress.yaml
