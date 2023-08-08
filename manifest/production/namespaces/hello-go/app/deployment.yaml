@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-go-api
+spec:
+  selector:
+    matchLabels:
+      app: my-go-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-go-api
+    spec:
+      containers:
+        - name: my-go-api
+          image: registry.digitalocean.com/enigmacamp/simple-go:v1.2
+          envFrom:
+            - configMapRef:
+                name: golang-config
+          resources:
+            limits:
+              memory: "10Mi"
+              cpu: "10m"
+          ports:
+            - containerPort: 8888
+      imagePullSecrets:
+        - name: regcred

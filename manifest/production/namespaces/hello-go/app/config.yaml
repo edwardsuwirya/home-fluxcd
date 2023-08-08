@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: golang-config
+data:
+  PORT: "8888"
+  RESPONSE: "Yoyoyo"
