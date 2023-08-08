@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-java-api
-          image: registry.digitalocean.com/enigmacamp/simple-java:v1.0 # {"$imagepolicy": "flux-system:hello-java"}
+          image: registry.digitalocean.com/enigmacamp/simple-java:1.0.0 # {"$imagepolicy": "flux-system:hello-java"}
           envFrom:
             - configMapRef:
                 name: java-config
