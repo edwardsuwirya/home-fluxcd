@@ -20,8 +20,8 @@ spec:
                 name: java-config
           resources:
             limits:
-              memory: "100Mi"
-              cpu: "100m"
+              memory: "32Mi"
+              cpu: "10m"
           ports:
             - containerPort: 8181
       imagePullSecrets:
