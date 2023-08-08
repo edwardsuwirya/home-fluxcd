@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: hello-go
+spec:
+  imageRepositoryRef:
+    name: hello-go
+  policy:
+    semver:
+      range: '>=1.0.0 <2.0.0'
+
+---
+
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: hello-java
+spec:
+  imageRepositoryRef:
+    name: hello-java
+  policy:
+    semver:
+      range: '>=1.0.0 <2.0.0'

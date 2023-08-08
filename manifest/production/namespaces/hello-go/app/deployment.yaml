@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-go-api
-          image: registry.digitalocean.com/enigmacamp/simple-go:v1.2
+          image: registry.digitalocean.com/enigmacamp/simple-go:v1.2 # {"$imagepolicy": "flux-system:hello-go"}
           envFrom:
             - configMapRef:
                 name: golang-config
